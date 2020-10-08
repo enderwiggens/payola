@@ -39,8 +39,8 @@ module Payola
 
       def update_sale_with_charge(sale, charge, secret_key)
         sale.stripe_id  = charge.id
-        sale.card_type  = charge.source.brand
-        sale.card_last4 = charge.source.last4
+        sale.card_type  = charge.payment_method_details.card.brand
+        sale.card_last4 = charge.payment_method_details.card.last4
 
         if charge.respond_to?(:fee)
           sale.fee_amount = charge.fee
