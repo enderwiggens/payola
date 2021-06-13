@@ -47,7 +47,7 @@ module Payola
     end
 
     def subscribe(name, &block)
-      StripeEvent.subscribe(name, block)
+      StripeEvent.subscribe(name, &block)
     end
 
     def instrument(name, object)
@@ -55,7 +55,7 @@ module Payola
     end
 
     def all(&block)
-      StripeEvent.all(block)
+      StripeEvent.all(&block)
     end
 
     def queue!(klass, *args)
