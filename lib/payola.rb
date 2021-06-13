@@ -48,6 +48,10 @@ module Payola
 
     def subscribe(name, callable)
       StripeEvent.subscribe(name, callable)
+=======
+    def subscribe(name, &block)
+      StripeEvent.subscribe(name, &block)
+>>>>>>> parent of f6d0e3c (Update payola.rb)
     end
 
     def instrument(name, object)
