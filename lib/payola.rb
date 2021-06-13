@@ -46,6 +46,7 @@ module Payola
       return publishable_key_retriever.call(sale).to_s
     end
 
+<<<<<<< HEAD
     def subscribe(name, callable)
       StripeEvent.subscribe(name, callable)
 =======
