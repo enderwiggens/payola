@@ -46,8 +46,8 @@ module Payola
       return publishable_key_retriever.call(sale).to_s
     end
 
-    def subscribe(name, callable)
-      StripeEvent.subscribe(name, callable)
+    def subscribe(name, &block)
+      StripeEvent.subscribe(name, block)
     end
 
     def instrument(name, object)
