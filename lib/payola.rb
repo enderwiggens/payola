@@ -46,21 +46,16 @@ module Payola
       return publishable_key_retriever.call(sale).to_s
     end
 
-<<<<<<< HEAD
-    def subscribe(name, callable)
-      StripeEvent.subscribe(name, callable)
-=======
     def subscribe(name, &block)
-      StripeEvent.subscribe(name, &block)
->>>>>>> parent of f6d0e3c (Update payola.rb)
+      StripeEvent.subscribe(name, block)
     end
 
     def instrument(name, object)
       StripeEvent.backend.instrument(StripeEvent.namespace.call(name), object)
     end
 
-    def all(callable)
-      StripeEvent.all(callable)
+    def all(&block)
+      StripeEvent.all(block)
     end
 
     def queue!(klass, *args)
