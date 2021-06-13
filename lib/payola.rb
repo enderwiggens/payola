@@ -47,7 +47,7 @@ module Payola
     end
 
     def subscribe(name, &block)
-      callable = &block
+      p callable = block
       StripeEvent.subscribe(name, callable)
     end
 
@@ -56,7 +56,7 @@ module Payola
     end
 
     def all(&block)
-      callable = &block
+      p callable = block
       StripeEvent.all(callable)
     end
 
